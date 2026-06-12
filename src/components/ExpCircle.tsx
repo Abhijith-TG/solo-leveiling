@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { User } from "../types/user";
 
 
@@ -13,6 +14,30 @@ function ExpCircle({user}:circleType) {
   const circumference = 2 * Math.PI * radius;
 
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
+  const [color,setColor] = useState("text-green-400")
+
+  
+
+ 
+  useEffect(()=>{
+    const value = user.xp/user.maxXp*100;
+    console.log(value)
+    if (value <= 10) {
+  setColor("text-red-400");
+} else if (value <= 30) {
+  setColor("text-orange-400");
+} else if (value <= 50) {
+  setColor("text-yellow-400");
+} else if (value <= 70) {
+  setColor("text-violet-400");
+} else if (value <= 90) {
+  setColor("text-blue-400");
+} else {
+  setColor("text-green-400");
+}
+
+  },[user])
+
 
   return (
     <div className="bg-black w-90 h-90 flex items-center justify-center relative">
@@ -43,7 +68,7 @@ function ExpCircle({user}:circleType) {
           Level {user.level}{" "}
         </p>
         <p className="text-green-400 text-md  absolute bottom-17">
-          {user.xp + "/" + user.maxXp} XP
+          <span className={`${color}`}>{user.xp}</span> / <span>{user.maxXp}</span>  XP
         </p>
       </div>
   )
