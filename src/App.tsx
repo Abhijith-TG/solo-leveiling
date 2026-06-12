@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
+import type { Tasks } from "./types/tasks";
+import type { User } from "./types/user";
 
-type User = {
-  level: number;
-  xp: number;
-  maxXp: number;
-};
 
-type Tasks = { id: number; desc: string; completed: boolean; xp: number };
+
 
 function App() {
   useEffect(() => {

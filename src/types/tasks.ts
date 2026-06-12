@@ -1,0 +1,1 @@
+export type Tasks = { id: number; desc: string; completed: boolean; xp: number };
