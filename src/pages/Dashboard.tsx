@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import type { Tasks } from "../types/tasks";
 import type { User } from "../types/user";
+import { tasklist } from "../services/taskService";
+import ExpCircle from "../components/ExpCircle";
 
 
 
@@ -20,68 +22,7 @@ function Dashboard() {
     }
   }, []);
 
-  const tasklist: Tasks[] = [
-    {
-      id: 1,
-      desc: "Make a Git commit",
-      completed: false,
-      xp: 10,
-    },
-    {
-      id: 2,
-      desc: "Fix a bug",
-      completed: false,
-      xp: 30,
-    },
-    {
-      id: 3,
-      desc: "Create a new React component",
-      completed: false,
-      xp: 25,
-    },
-    {
-      id: 4,
-      desc: "Study for 30 minutes",
-      completed: false,
-      xp: 20,
-    },
-    {
-      id: 5,
-      desc: "Solve one DSA problem",
-      completed: false,
-      xp: 40,
-    },
-    {
-      id: 6,
-      desc: "Write an API endpoint",
-      completed: false,
-      xp: 35,
-    },
-    {
-      id: 7,
-      desc: "Read documentation",
-      completed: false,
-      xp: 15,
-    },
-    {
-      id: 8,
-      desc: "Refactor code",
-      completed: false,
-      xp: 25,
-    },
-    {
-      id: 9,
-      desc: "Push code to GitHub",
-      completed: false,
-      xp: 15,
-    },
-    {
-      id: 10,
-      desc: "Deploy a project",
-      completed: false,
-      xp: 100,
-    },
-  ];
+  
 
   const [user, setUser] = useState<User>(() => {
     const localUser = localStorage.getItem("user");
@@ -94,12 +35,7 @@ function Dashboard() {
     return localTask ? JSON.parse(localTask) : tasklist;
   });
 
-  const percentage = (user.xp / user.maxXp) * 100;
 
-  const radius = 70;
-  const circumference = 2 * Math.PI * radius;
-
-  const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   const increaseXp = (id: number) => {
     const task: any = tasks.filter((t) => t.id === id);
@@ -131,37 +67,7 @@ function Dashboard() {
 
   return (
     <div className="p-5">
-      <div className="bg-black w-90 h-90 flex items-center justify-center relative">
-        <svg width="180" height="180">
-          <circle
-            cx="90"
-            cy="90"
-            r={radius}
-            stroke="#333"
-            strokeWidth="10"
-            fill="transparent"
-          />
-
-          <circle
-            cx="90"
-            cy="90"
-            r={radius}
-            stroke="lime"
-            strokeWidth="10"
-            fill="transparent"
-            strokeDasharray={circumference}
-            strokeDashoffset={strokeDashoffset}
-            transform="rotate(-90 90 90)"
-          />
-        </svg>
-
-        <p className="text-green-400 text-2xl font-bold absolute">
-          Level {user.level}{" "}
-        </p>
-        <p className="text-green-400 text-md  absolute bottom-17">
-          {user.xp + "/" + user.maxXp} XP
-        </p>
-      </div>
+      <ExpCircle user={user}/>
 
       <div>
         {tasks.map((t) => (

@@ -1,7 +1,51 @@
+import type { User } from "../types/user";
 
-function ExpCircle() {
+
+type circleType ={
+  user:User
+}
+
+function ExpCircle({user}:circleType) {
+
+  const percentage = (user.xp / user.maxXp) * 100;
+
+  const radius = 70;
+  const circumference = 2 * Math.PI * radius;
+
+  const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
   return (
-    <div>ExpCircle</div>
+    <div className="bg-black w-90 h-90 flex items-center justify-center relative">
+        <svg width="180" height="180">
+          <circle
+            cx="90"
+            cy="90"
+            r={radius}
+            stroke="#333"
+            strokeWidth="10"
+            fill="transparent"
+          />
+
+          <circle
+            cx="90"
+            cy="90"
+            r={radius}
+            stroke="lime"
+            strokeWidth="10"
+            fill="transparent"
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+            transform="rotate(-90 90 90)"
+          />
+        </svg>
+
+        <p className="text-green-400 text-2xl font-bold absolute">
+          Level {user.level}{" "}
+        </p>
+        <p className="text-green-400 text-md  absolute bottom-17">
+          {user.xp + "/" + user.maxXp} XP
+        </p>
+      </div>
   )
 }
 
