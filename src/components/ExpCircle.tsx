@@ -21,8 +21,7 @@ function ExpCircle({user}:circleType) {
  
   useEffect(()=>{
     const value = user.xp/user.maxXp*100;
-    console.log(value)
-    if (value <= 10) {
+if (value <= 10) {
   setColor("text-red-400");
 } else if (value <= 30) {
   setColor("text-orange-400");

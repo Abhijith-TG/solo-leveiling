@@ -3,6 +3,7 @@ import type { Tasks } from "../types/tasks";
 import type { User } from "../types/user";
 import { tasklist } from "../services/taskService";
 import ExpCircle from "../components/ExpCircle";
+import TaskList from "../components/TaskList";
 
 
 
@@ -68,20 +69,8 @@ function Dashboard() {
   return (
     <div className="p-5">
       <ExpCircle user={user}/>
-
       <div>
-        {tasks.map((t) => (
-          <div className="flex gap-5 my-2 w-90 justify-between" key={t.id}>
-            <p className={`${t.completed ? "line-through" : ""} `}>{t.desc}</p>
-            <button
-              disabled={t.completed}
-              onClick={() => increaseXp(t.id)}
-              className={`${t.completed ? "bg-gray-400" : "bg-green-400 hover:cursor-pointer hover:bg-green-200"} px-4 w-30 py-1`}
-            >
-              {t.completed ? "Completed" : "+" + t.xp + " Xp"}
-            </button>
-          </div>
-        ))}
+        <TaskList tasks={tasks} increaseXp={increaseXp}/>
       </div>
     </div>
   );
