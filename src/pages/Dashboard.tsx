@@ -12,14 +12,29 @@ import TaskList from "../components/TaskList";
 function Dashboard() {
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0];
-    const localDate = localStorage.getItem("date");
+    const localDate:any = localStorage.getItem("date");
+    
+    
+
     if (!localDate) {
       localStorage.setItem("date", JSON.stringify(today));
+      
+      
+
     } else {
       if (JSON.parse(localDate) < today) {
         setTasks((prev) => prev.map((t) => ({ ...t, completed: false })));
         localStorage.setItem("date", JSON.stringify(today));
+
       }
+
+      // const date1:any = new Date(JSON.parse(localDate));
+      // const date2:any = new Date(today);
+
+      // const diffInMs = date2 - date1;
+      // const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+
+      // console.log(diffInDays);
     }
   }, []);
 
@@ -28,7 +43,7 @@ function Dashboard() {
   const [user, setUser] = useState<User>(() => {
     const localUser = localStorage.getItem("user");
 
-    return localUser ? JSON.parse(localUser) : { level: 1, xp: 0, maxXp: 100 };
+    return localUser ? JSON.parse(localUser) : { level: 1, xp: 0, maxXp: 100,streak:1, lastDate:new Date().toISOString().split("T")[0]};
   });
 
   const [tasks, setTasks] = useState<Tasks[]>(() => {
@@ -51,6 +66,7 @@ function Dashboard() {
 
     if (newXp >= user.maxXp) {
       setUser((prev) => ({
+        ...prev,
         level: prev.level + 1,
         xp: newXp - prev.maxXp,
         maxXp: (prev.level + 1) * 100,
