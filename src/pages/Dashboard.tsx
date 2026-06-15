@@ -34,7 +34,7 @@ function Dashboard() {
     const lastDate = new Date(user.lastDate);
     const currentDate = new Date(today);
 
-const diffInDays =
+  const diffInDays =
   (currentDate.getTime() - lastDate.getTime()) /
   (1000 * 60 * 60 * 24);
 
@@ -50,8 +50,20 @@ const diffInDays =
     ...prev,
     lastDate: today,
     streak: 1
-  }));
+  }))
+
+
+  
+  
 }
+
+if(!user.streak && !user.lastDate){
+    setUser(prev => ({
+    ...prev,
+    lastDate: today,
+    streak: 1
+  }))
+  }
 
   }, []);
 
