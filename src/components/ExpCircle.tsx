@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { User } from "../types/user";
+import Streaks from "./Streaks";
 
 
 type circleType ={
@@ -40,6 +41,10 @@ if (value <= 10) {
 
   return (
     <div className="bg-black w-90 h-90 flex items-center justify-center relative">
+      <div className="absolute top-2 right-2">
+        <Streaks  streakCount={user.streak}/>
+      </div>
+
         <svg width="180" height="180">
           <circle
             cx="90"

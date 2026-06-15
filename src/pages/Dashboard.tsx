@@ -28,14 +28,31 @@ function Dashboard() {
 
       }
 
-      // const date1:any = new Date(JSON.parse(localDate));
-      // const date2:any = new Date(today);
-
-      // const diffInMs = date2 - date1;
-      // const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-
-      // console.log(diffInDays);
+      
     }
+
+    const lastDate = new Date(user.lastDate);
+    const currentDate = new Date(today);
+
+const diffInDays =
+  (currentDate.getTime() - lastDate.getTime()) /
+  (1000 * 60 * 60 * 24);
+
+    if (diffInDays === 1) {
+      console.log(user)
+  setUser(prev => ({
+    ...prev,
+    lastDate: today,
+    streak: prev.streak + 1
+  }));
+} else if (diffInDays > 1) {
+  setUser(prev => ({
+    ...prev,
+    lastDate: today,
+    streak: 1
+  }));
+}
+
   }, []);
 
   

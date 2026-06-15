@@ -1,8 +1,12 @@
 
-function Streaks() {
+type streakProps = {
+  streakCount:number
+}
+
+function Streaks({streakCount}:streakProps) {
   return (
-    <div>
-        
+    <div className="bg-white pl-1 pr-2 rounded-2xl">
+        <p>🔥 {streakCount}</p>
     </div>
   )
 }
