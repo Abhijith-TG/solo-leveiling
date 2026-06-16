@@ -9,7 +9,7 @@ type TaskProps = {
 
 function TaskList({tasks,increaseXp}:TaskProps) {
   return (
-        <div>
+        <div className=''>
         {tasks.map((t) => (
           <div className="flex gap-5 my-2 w-90 justify-between" key={t.id}>
             <p className={`${t.completed ? "line-through" : ""} `}>{t.desc}</p>

@@ -5,15 +5,13 @@ import { tasklist } from "../services/taskService";
 import ExpCircle from "../components/ExpCircle";
 import TaskList from "../components/TaskList";
 import { DailyHelper } from "../helpers/dailyHelper";
+import { increaseXp } from "../helpers/xpHelper";
 
 
 
 
 
 function Dashboard() {
-
-
-  
 
   const [user, setUser] = useState<User>(() => {
     const localUser = localStorage.getItem("user");
@@ -29,28 +27,8 @@ function Dashboard() {
 
   DailyHelper({user,setUser,setTasks})
 
-
-
-
-  const increaseXp = (id: number) => {
-    const task: any = tasks.filter((t) => t.id === id);
-
-    if (task[0].completed) return;
-
-    setTasks((prev) =>
-      prev.map((t) => (t.id === task[0].id ? { ...t, completed: true } : t)),
-    );
-
-    const newXp = user.xp + task[0].xp;
-
-    if (newXp >= user.maxXp) {
-      setUser((prev) => ({
-        ...prev,
-        level: prev.level + 1,
-        xp: newXp - prev.maxXp,
-        maxXp: (prev.level + 1) * 100,
-      }));
-    } else setUser((prev) => ({ ...prev, xp: newXp }));
+  const increaseXps = (id: number) => {
+    increaseXp({id,user,tasks,setUser,setTasks})
   };
 
   useEffect(() => {
@@ -62,10 +40,10 @@ function Dashboard() {
   }, [tasks]);
 
   return (
-    <div className="p-5">
+    <div className="p-5 flex flex-col items-center justify-center">
       <ExpCircle user={user}/>
       <div>
-        <TaskList tasks={tasks} increaseXp={increaseXp}/>
+        <TaskList tasks={tasks} increaseXp={increaseXps}/>
       </div>
     </div>
   );
