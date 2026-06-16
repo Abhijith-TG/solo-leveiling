@@ -4,81 +4,31 @@ import type { User } from "../types/user";
 import { tasklist } from "../services/taskService";
 import ExpCircle from "../components/ExpCircle";
 import TaskList from "../components/TaskList";
+import { DailyHelper } from "../helpers/dailyHelper";
 
 
 
 
 
 function Dashboard() {
-  useEffect(() => {
-    const today = new Date().toISOString().split("T")[0];
-    const localDate:any = localStorage.getItem("date");
-    
-    
 
-    if (!localDate) {
-      localStorage.setItem("date", JSON.stringify(today));
-      
-      
-
-    } else {
-      if (JSON.parse(localDate) < today) {
-        setTasks((prev) => prev.map((t) => ({ ...t, completed: false })));
-        localStorage.setItem("date", JSON.stringify(today));
-
-      }
-
-      
-    }
-
-    const lastDate = new Date(user.lastDate);
-    const currentDate = new Date(today);
-
-  const diffInDays =
-  (currentDate.getTime() - lastDate.getTime()) /
-  (1000 * 60 * 60 * 24);
-
-    if (diffInDays === 1) {
-      console.log(user)
-  setUser(prev => ({
-    ...prev,
-    lastDate: today,
-    streak: prev.streak + 1
-  }));
-} else if (diffInDays > 1) {
-  setUser(prev => ({
-    ...prev,
-    lastDate: today,
-    streak: 1
-  }))
-
-
-  
-  
-}
-
-if(!user.streak && !user.lastDate){
-    setUser(prev => ({
-    ...prev,
-    lastDate: today,
-    streak: 1
-  }))
-  }
-
-  }, []);
 
   
 
   const [user, setUser] = useState<User>(() => {
     const localUser = localStorage.getItem("user");
-
-    return localUser ? JSON.parse(localUser) : { level: 1, xp: 0, maxXp: 100,streak:1, lastDate:new Date().toISOString().split("T")[0]};
+    return localUser ? JSON.parse(localUser)
+     :
+      { level: 1, xp: 0, maxXp: 100,streak:1, lastDate:new Date().toISOString().split("T")[0]};
   });
 
   const [tasks, setTasks] = useState<Tasks[]>(() => {
     const localTask = localStorage.getItem("tasks");
     return localTask ? JSON.parse(localTask) : tasklist;
   });
+
+  DailyHelper({user,setUser,setTasks})
+
 
 
 
