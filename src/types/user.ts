@@ -4,4 +4,5 @@ export type User = {
   maxXp: number;
   streak:number;
   lastDate:any;
+  tasksCompleted:number;
 };

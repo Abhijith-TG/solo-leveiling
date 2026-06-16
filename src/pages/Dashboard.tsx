@@ -17,7 +17,7 @@ function Dashboard() {
     const localUser = localStorage.getItem("user");
     return localUser ? JSON.parse(localUser)
      :
-      { level: 1, xp: 0, maxXp: 100,streak:1, lastDate:new Date().toISOString().split("T")[0]};
+      { level: 1, xp: 0, maxXp: 100,streak:1,tasksCompleted:0,lastDate:new Date().toISOString().split("T")[0]};
   });
 
   const [tasks, setTasks] = useState<Tasks[]>(() => {

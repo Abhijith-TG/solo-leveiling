@@ -15,6 +15,8 @@ export const increaseXp=({id,user,tasks,setUser,setTasks}:increaseXpProps)=>{
 
     if (task[0].completed) return;
 
+    setUser((prev)=>({...prev, tasksCompleted:prev.tasksCompleted+1}))
+
     setTasks((prev) =>
       prev.map((t) => (t.id === task[0].id ? { ...t, completed: true } : t)),
     );

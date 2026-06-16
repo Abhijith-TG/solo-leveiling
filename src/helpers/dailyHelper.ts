@@ -66,6 +66,13 @@ if(!user.streak && !user.lastDate){
     streak: 1
   }))
   }
+
+  if(!user.tasksCompleted){
+    setUser(prev => ({
+    ...prev,
+    tasksCompleted: 1
+  }))
+  }
   },[])
 
 }
