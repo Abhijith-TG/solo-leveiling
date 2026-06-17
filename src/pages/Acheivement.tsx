@@ -4,7 +4,7 @@ import { Achievements } from "../services/acheivementService";
 
 function Acheivement() {
 
-    const [acheivments, setAcheivments] = useState<Achievement[]>(()=>{
+    const [acheivments, ] = useState<Achievement[]>(()=>{
         const localAcheivements = localStorage.getItem("acheivements");
         return localAcheivements ? JSON.parse(localAcheivements) : Achievements
     } )
