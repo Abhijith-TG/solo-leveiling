@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Tasks } from "../types/tasks"
 import type { User } from "../types/user"
+import { toast } from "sonner"
 
 type increaseXpProps ={
     id:number,
@@ -30,5 +31,8 @@ export const increaseXp=({id,user,tasks,setUser,setTasks}:increaseXpProps)=>{
         xp: newXp - prev.maxXp,
         maxXp: (prev.level + 1) * 100,
       }));
+
+      toast.success(`Congratulations leveled up ${user.level+1}`)
+
     } else setUser((prev) => ({ ...prev, xp: newXp }));
 }
