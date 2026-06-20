@@ -29,7 +29,7 @@ function Acheivement() {
         achevmentsChecker({user,acheivments,setAcheivment,tasks})
 
   return (
-    <div className="lg:px-20 px-4 py-10">
+    <div className=" px-5 py-10">
         <div className="flex items-center ">
             <IoArrowBackCircle onClick={()=>navigate("/")} className="text-white text-2xl mr-2 ml-4 hover:cursor-pointer"/>
             <p className="text-white text-xl"> Acheivements</p>

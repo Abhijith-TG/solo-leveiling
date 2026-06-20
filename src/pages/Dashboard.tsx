@@ -42,7 +42,7 @@ function Dashboard() {
   return (
     <div className="p-5 flex flex-col  items-center justify-center shadow-white ">
       <ExpCircle user={user}/>
-      <div className="overflow-y-auto h-70 ">
+      <div className="overflow-y-auto h-65 ">
         <TaskList tasks={tasks} increaseXp={increaseXps}/>
       </div>
     </div>
