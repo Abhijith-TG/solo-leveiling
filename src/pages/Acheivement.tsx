@@ -4,8 +4,12 @@ import { Achievements } from "../services/acheivementService";
 import { achevmentsChecker } from "../helpers/acheivmentHelper";
 import type { User } from "../types/user";
 import type { Tasks } from "../types/tasks";
+import { IoArrowBackCircle } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 function Acheivement() {
+
+    const navigate = useNavigate()
 
     const [acheivments, setAcheivment] = useState<Achievement[]>(()=>{
         const localAcheivements = localStorage.getItem("acheivements");
@@ -26,7 +30,10 @@ function Acheivement() {
 
   return (
     <div className="lg:px-20 px-4 py-10">
-        <p className="text-white text-xl">Acheivements</p>
+        <div className="flex items-center ">
+            <IoArrowBackCircle onClick={()=>navigate("/")} className="text-white text-2xl mr-2 ml-4 hover:cursor-pointer"/>
+            <p className="text-white text-xl"> Acheivements</p>
+        </div>
     <div className="grid grid-cols-1  lg:grid-cols-4 py-10 gap-5 px-5 items-center justify-center">
     {
         acheivments.map((a)=>
