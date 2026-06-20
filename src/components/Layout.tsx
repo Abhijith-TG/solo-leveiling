@@ -3,7 +3,7 @@ import SideBar from "./SideBar"
 
 function Layout() {
   return (
-    <div className="flex ">
+    <div className="flex  ">
         <SideBar/>
         <main className="ml-15 sm:ml-2">
             <Outlet/>

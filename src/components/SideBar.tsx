@@ -23,7 +23,7 @@ function SideBar() {
 
 
   return (
-    <div className={`text-white absolute h-screen z-100   bg-purple-900/20 backdrop-blur-xl px-2 py-5 sm:relative ${expand ? "w-55": "w-18"} transition-all `}>
+    <div className={`text-white absolute h-200 z-100   bg-purple-900/20 backdrop-blur-xl px-2 py-5 sm:relative ${expand ? "w-55": "w-18"} transition-all `}>
         <div className="flex items-center mb-10 gap-2 ">
         <img src={logo} className="w-10 h-10 shrink-0 relative top-1" />
         {expand && <h1 className="text-[28px] " >TazKora</h1>}
