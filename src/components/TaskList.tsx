@@ -11,7 +11,7 @@ function TaskList({tasks,increaseXp}:TaskProps) {
   return (
         <div className=''>
         {tasks.map((t) => (
-          <div className="flex gap-5 my-2 w-90 justify-between text-white" key={t.id}>
+          <div className="flex gap-5 my-2 w-95 px-2 justify-between text-white " key={t.id}>
             <p className={`${t.completed ? "line-through" : ""} `}>{t.desc}</p>
             <button
               disabled={t.completed}
