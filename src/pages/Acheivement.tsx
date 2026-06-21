@@ -4,12 +4,9 @@ import { Achievements } from "../services/acheivementService";
 import { achevmentsChecker } from "../helpers/acheivmentHelper";
 import type { User } from "../types/user";
 import type { Tasks } from "../types/tasks";
-import { IoArrowBackCircle } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 
 function Acheivement() {
 
-    const navigate = useNavigate()
 
     const [acheivments, setAcheivment] = useState<Achievement[]>(()=>{
         const localAcheivements = localStorage.getItem("acheivements");
@@ -31,18 +28,18 @@ function Acheivement() {
   return (
     <div className=" px-5 py-10">
         <div className="flex items-center ">
-            <IoArrowBackCircle onClick={()=>navigate("/")} className="text-white text-2xl mr-2 ml-4 hover:cursor-pointer"/>
-            <p className="text-white text-xl"> Acheivements</p>
+            {/* <IoArrowBackCircle onClick={()=>navigate("/")} className="text-white text-2xl mr-2 ml-4 hover:cursor-pointer"/> */}
+            <p className="text-white text-2xl ml-10"> Acheivements</p>
         </div>
-    <div className="grid grid-cols-1  lg:grid-cols-4 py-10 gap-5 px-5 items-center justify-center">
+    <div className="flex flex-wrap py-10 gap-5 px-5 items-center justify-center">
     {
         acheivments.map((a)=>
-            <div className="bg-purple-800 w-60 flex px-4 py-2 rounded"  key={a.id} >
-                <div>
-
-                <p>{a.title}</p>
-                <p>{a.desc}</p>
-                <p className={`${a.completed ? "text-green-900 bg-green-200 ":"text-red-900 bg-red-200 " }px-2 w-50 mt-2 rounded flex items-center justify-center`}  >{`${a.completed?"Acheived":"Not Acheived"}`}</p>
+            <div className={`   ${ a.completed ? a.bg : "bg-gray-600"} w-32 h-32   flex px-4  rounded-full relative  flex-col items-center justify-center`}  key={a.id} >
+                <div className={`flex flex-col ${ a.completed ? a.bg2 : "bg-gray-900 grayscale"} z-20 items-center  w-30 h-30 rounded-full `}>
+                {/* <p>{a.desc}</p> */}
+                <img className=" -z-10 absolute w-[80%] rounded-full" src={a.image} alt="logo" />
+                <p className="absolute bottom-4 ">{a.title}</p>
+                {/* <p className={`${a.completed ? "text-green-900 bg-green-200 ":"text-red-900 bg-red-200 " }px-2 w-50 mt-2 rounded flex items-center justify-center`}  >{`${a.completed?"Acheived":"Not Acheived"}`}</p> */}
                     
                 </div>
             </div>

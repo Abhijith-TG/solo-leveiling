@@ -3,4 +3,7 @@ export type Achievement = {
   title: string;
   desc: string;
   completed: boolean;
+  image:any;
+  bg:string;
+  bg2:string;
 };
