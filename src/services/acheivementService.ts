@@ -1,6 +1,7 @@
 import fire from "../assets/streak.png"
 import shadow from "../assets/shadow.png"
 import noob from "../assets/noobie.png"
+import starter from "../assets/starter.png"
 
 
 
@@ -14,17 +15,17 @@ export const Achievements = [
     desc: "Complete your first task",
     completed: false,
     image:noob,
-    bg:"bg-green-700 text-white ",
-    bg2:"bg-green-900 "
+    bg:"bg-green-800 text-white ",
+    bg2:"bg-green-950 "
   },
   {
     id: 2,
-    title: "Started",
+    title: "Starter",
     desc: "Reach Level 2",
     completed: false,
-    image:fire,
-    bg:"bg-orange-300",
-    bg2:"bg-orange-800/70 "
+    image:starter,
+    bg:"bg-gray-800",
+    bg2:"bg-black/50 "
 
 
 
