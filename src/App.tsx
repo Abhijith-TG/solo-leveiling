@@ -3,6 +3,7 @@ import Dashboard from './pages/Dashboard'
 import Acheivement from './pages/Acheivement'
 import ParticlesBg from './components/ParticlesBg'
 import Layout from './components/Layout'
+import Statistics from './pages/Statistics'
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
 
         <Route path='/' element={<Dashboard/>} />
         <Route path='/acheivments' element={<Acheivement/>} />
+        <Route path='/statistics' element={<Statistics/>} />
+
 
         </Route>
       </Routes>
