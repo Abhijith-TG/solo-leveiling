@@ -9,7 +9,7 @@ function Acheivement() {
 
 
     const [acheivments, setAcheivment] = useState<Achievement[]>(()=>{
-        const localAcheivements = localStorage.getItem("acheivements");
+        const localAcheivements = localStorage.getItem("acheivments");
         return localAcheivements ? JSON.parse(localAcheivements) : Achievements
     } )
 
@@ -19,11 +19,15 @@ function Acheivement() {
     const tasks:Tasks[] = JSON.parse(localTasks)
 
 
+
     useEffect(() => {
         localStorage.setItem("acheivments", JSON.stringify(acheivments));
       }, [acheivments]);
 
-        achevmentsChecker({user,acheivments,setAcheivment,tasks})
+      useEffect(()=>{
+    console.log(acheivments)
+          achevmentsChecker({user,acheivments,setAcheivment,tasks})
+      },[])
 
   return (
     <div className=" px-5 py-10">

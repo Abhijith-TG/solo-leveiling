@@ -33,7 +33,7 @@ function SideBar() {
         <div onClick={()=>setExpand(!expand)} className={`z-100 w-5 h-5 rounded-full absolute top-8 ${expand ? "left-52": "left-13"} bg-purple-950/80 transition-all `}></div>
         {
             navItems.map((nav,index)=>
-                <div className="flex items-center gap-3 mt-2 hover:cursor-pointer hover:bg-purple-950/50 px-2 py-2 rounded-xl transition-all" onClick={()=>navigate(nav.route)} >
+                <div key={index} className="flex items-center gap-3 mt-2 hover:cursor-pointer hover:bg-purple-950/50 px-2 py-2 rounded-xl transition-all" onClick={()=>navigate(nav.route)} >
                     <div className=" shrink-0  ">{nav.icon}</div>
                     {expand && <p key={index} className=" text-md" >{nav.name}</p>}
                 </div>
