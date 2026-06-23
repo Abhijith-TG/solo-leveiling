@@ -5,7 +5,7 @@ import type { User } from "../types/user"
 
 function Statistics() {
 
-    const localUser:any = localStorage.getItem("user")
+    const localUser:string = localStorage.getItem("user") || ""
         const user:User = JSON.parse(localUser)
 
         let maxXp = 0;
@@ -15,7 +15,7 @@ function Statistics() {
         }
 
     const stats=[{
-        name:"🔥 Current Streak",
+        name:"🔥 Streak",
         stat:user.streak
     },
     {
@@ -23,7 +23,7 @@ function Statistics() {
         stat:user.streak
     },
     {
-        name:"⭐ Total XP Earned",
+        name:"⭐XP Earned",
         stat:maxXp
     },
     {
@@ -43,21 +43,56 @@ function Statistics() {
 
   return (
    <div className="p-5 flex flex-col  shadow-white ">
-        <h1 className="text-2xl mb-5  text-white">Statistics</h1>
+        <h1 className="text-2xl mb-5  text-white">Hunter Records</h1>
+        <div className="flex flex-wrap gap-8">
+
         {
             stats.map((stat,item)=>
-                <div className="flex gap-3 text-white" key={item} >
-                    <h1>{stat.name}: </h1>
-                    <h1>{stat.stat} </h1>
+                <div className={`flex flex-col gap-3 text-white items-center p-2 bg-violet-900/50  rounded-2xl w-45 h-20`} key={item} >
+                    <h1>{stat.name} </h1>
+                    <h1 className="text-xl font-bold">{stat.stat} </h1>
                 </div>
             )
         }
-    <div>
+        </div>
 
-    </div>
+        
+        <div className="mt-10 flex gap-5">
 
-    
+            <div>
 
+
+            <h1 className="text-xl mb-5  text-white">Daily progress</h1>
+
+            <div className="w-50 h-10 bg-black">
+                <div className="h-10 w-25 bg-green-400">
+
+                </div>
+            </div>
+
+            </div>
+            <div>
+
+            <h1 className="text-xl mb-5  text-white">Weekly Progress</h1>
+
+            <div className="w-50 h-10 bg-black">
+                <div className="h-10 w-5 bg-green-400">
+
+                </div>
+            </div>
+
+            </div>
+
+            
+
+        </div>
+
+        <div className="mt-10">
+             <h1 className="text-xl mb-5   text-white">Activity</h1>
+                    <div className="bg-black p-0.5 w-200 h-50">
+                       <div className="bg-green-500 w-3 h-3" ></div>       
+                    </div>
+            </div>
     
 
     
