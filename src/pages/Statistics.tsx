@@ -20,7 +20,7 @@ function Statistics() {
     },
     {
         name:"🏆 Longest Streak",
-        stat:user.streak
+        stat:user.longestStreak
     },
     {
         name:"⭐XP Earned",
