@@ -5,4 +5,5 @@ export type User = {
   streak:number;
   lastDate:any;
   tasksCompleted:number;
+  longestStreak:number;
 };

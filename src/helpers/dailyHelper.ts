@@ -34,6 +34,7 @@ export const DailyHelper = ({ user, setUser, setTasks }: DailyHelperProps) => {
         ...prev,
         lastDate: today,
         streak: prev.streak + 1,
+        
       }));
     } else if (diffInDays > 1) {
       setUser((prev) => ({
@@ -43,6 +44,8 @@ export const DailyHelper = ({ user, setUser, setTasks }: DailyHelperProps) => {
       }));
     }
 
+
+    
     if (!user.streak && !user.lastDate) {
       setUser((prev) => ({
         ...prev,
@@ -50,6 +53,21 @@ export const DailyHelper = ({ user, setUser, setTasks }: DailyHelperProps) => {
         streak: 1,
       }));
     }
+    
+    if(!user.longestStreak){
+      setUser((prev) => ({
+        ...prev,
+       longestStreak:prev.streak
+      }));
+    }
+
+    if(user.streak > user.longestStreak){
+      setUser((prev) => ({
+        ...prev,
+       longestStreak:prev.streak
+      }));
+    }
+
 
     if (!user.tasksCompleted) {
       setUser((prev) => ({
