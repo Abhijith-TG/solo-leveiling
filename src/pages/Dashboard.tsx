@@ -25,6 +25,10 @@ function Dashboard() {
     return localTask ? JSON.parse(localTask) : tasklist;
   });
 
+
+
+
+
   DailyHelper({user,setUser,setTasks})
 
   const increaseXps = (id: number) => {

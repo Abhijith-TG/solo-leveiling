@@ -1,7 +1,8 @@
 import type React from "react"
-import type { Tasks } from "../types/tasks"
+import type {  Tasks } from "../types/tasks"
 import type { User } from "../types/user"
 import { toast } from "sonner"
+import { addDailyActivity } from "./dailyActivityHelper"
 
 type increaseXpProps ={
     id:number,
@@ -11,12 +12,24 @@ type increaseXpProps ={
     setTasks:React.Dispatch<React.SetStateAction<Tasks[]>>
 }
 
+  
+
 export const increaseXp=({id,user,tasks,setUser,setTasks}:increaseXpProps)=>{
+
+    
+
+    
+    
+
     const task:Tasks[] = tasks.filter((t) => t.id === id);
 
     if (task[0].completed) return;
 
+    addDailyActivity(task[0].xp)
+
     setUser((prev)=>({...prev, tasksCompleted:prev.tasksCompleted+1}))
+
+
 
     setTasks((prev) =>
       prev.map((t) => (t.id === task[0].id ? { ...t, completed: true } : t)),
@@ -32,7 +45,12 @@ export const increaseXp=({id,user,tasks,setUser,setTasks}:increaseXpProps)=>{
         maxXp: (prev.level + 1) * 100,
       }));
 
+
+
+
       toast.success(`Congratulations leveled up ${user.level+1}`)
 
     } else setUser((prev) => ({ ...prev, xp: newXp }));
 }
+
+

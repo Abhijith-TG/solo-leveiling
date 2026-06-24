@@ -44,7 +44,7 @@ function Statistics() {
   return (
    <div className="p-5 flex flex-col  shadow-white ">
         <h1 className="text-2xl mb-5  text-white">Hunter Records</h1>
-        <div className="flex flex-wrap gap-8">
+        <div className="flex flex-wrap  gap-8">
 
         {
             stats.map((stat,item)=>

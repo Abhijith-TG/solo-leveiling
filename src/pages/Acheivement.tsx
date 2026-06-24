@@ -17,8 +17,8 @@ function Acheivement() {
     const user:User = JSON.parse(localUser)
     const localTasks:any = localStorage.getItem("tasks")
     const tasks:Tasks[] = JSON.parse(localTasks)
-
-
+    
+   
 
     useEffect(() => {
         localStorage.setItem("acheivments", JSON.stringify(acheivments));
