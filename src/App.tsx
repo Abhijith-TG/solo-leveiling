@@ -4,6 +4,7 @@ import Acheivement from './pages/Acheivement'
 import ParticlesBg from './components/ParticlesBg'
 import Layout from './components/Layout'
 import Statistics from './pages/Statistics'
+import LevelUpPage from './pages/LevelUpPage'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route element={<Layout/>}>
 
         <Route path='/' element={<Dashboard/>} />
+        <Route path='/level' element={<LevelUpPage/>} />
         <Route path='/acheivments' element={<Acheivement/>} />
         <Route path='/statistics' element={<Statistics/>} />
 

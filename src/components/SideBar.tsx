@@ -5,11 +5,13 @@ import { GoReport } from "react-icons/go"
 import { HiHome, HiSave } from "react-icons/hi"
 import logo from '../assets/logo.png'
 import { useNavigate } from "react-router-dom"
+import { GiHunterEyes } from "react-icons/gi"
 
 function SideBar() {
 
     const navItems = [
-        {name:"Home",route:"/", icon:<HiHome size={20}/>},
+        {name:"Dashboard",route:"/", icon:<HiHome size={20}/>},
+        {name:"Level Up",route:"/level", icon:<GiHunterEyes size={20}/>},
         {name:"Acheivements",route:"/acheivments",icon:<AiFillCheckCircle size={20}/>},
         {name:"Statistics",route:"/statistics",icon:<FaChartSimple size={20}/>},
         {name:"History",route:"/history",icon:<HiSave size={20}/>},
