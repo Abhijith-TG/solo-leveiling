@@ -2,7 +2,7 @@ import {  CgArrowTopRight } from 'react-icons/cg'
 
 function SideContent() {
   return (
-    <div className='bg-purple-900/40 text-white rounded-xl p-4 max-w-120'>
+    <div className='bg-purple-900/40 text-white rounded-xl p-4 max-w-120 inline '>
         <div className='flex mb-5 items-top justify-between'>
             <div className='flex flex-col gap-1'>
                 <p className='text-xl'>Recent Activity</p>
