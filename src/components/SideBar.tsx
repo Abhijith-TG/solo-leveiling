@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { AiFillCheckCircle } from "react-icons/ai"
 import { FaChartSimple } from "react-icons/fa6"
 import { GoReport } from "react-icons/go"
