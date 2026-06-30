@@ -1,3 +1,4 @@
+import Counter from "./Counter"
 import DateFilter from "./DateFilter"
 
 
@@ -5,14 +6,14 @@ function Overview() {
 
     const overview = [{
         name:"Level",
-        level:10,
+        level:11,
         icon:"💪",
         text:"vs previous month"
 
     },
 {
         name:"Experience",
-        level:2562,
+        level:2862,
         icon:"⏳",
         text:"Xps"
 
@@ -20,7 +21,7 @@ function Overview() {
     },
     {
         name:"Streak",
-        level:10,
+        level:11,
         icon:"🔥",
         text:"Days"
 
@@ -35,6 +36,7 @@ function Overview() {
 
     }
 ]
+
 
 
   return (
@@ -58,7 +60,7 @@ function Overview() {
                             <p className="text-lg">{over.name}</p>
                         </div>
                         <div className="flex flex-col items-start justify-start gap-3" >
-                            <p className="text-6xl text-amber-100" >{over.level}</p>
+                            <p className="text-6xl text-amber-100" ><Counter num={over.level} incre={over.name==='Experience'?40:1} /></p>
                             <p className="text-xs text-gray-200 ">vs previous month</p>
                         </div>
                     </div>

@@ -3,7 +3,6 @@ import { useState } from 'react'
 function DateFilter() {
 
     const dates = ['24h','7d','30d','All']
-    
 
     const [date, SetDate] = useState('7d')
 
