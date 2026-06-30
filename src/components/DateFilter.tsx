@@ -11,7 +11,7 @@ function DateFilter() {
     <div className='flex bg-purple-800/60    rounded-full'>
         {
             dates.map((d,i)=>(
-                <div className={`${date===d  ? "bg-purple-700/90  ":"s"} py-1 px-2 rounded-full w-15 flex items-center justify-center text-white transition-all`} onClick={()=>SetDate(d)} key={i}>
+                <div className={`${date===d  ? "bg-purple-700/90  ":"s"} py-1 px-2 rounded-full w-15 flex items-center justify-center text-white transition-all hover:cursor-pointer`} onClick={()=>SetDate(d)} key={i}>
                     {d}
                 </div>
             ))
