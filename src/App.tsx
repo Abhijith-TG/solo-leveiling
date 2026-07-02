@@ -5,6 +5,7 @@ import ParticlesBg from './components/ParticlesBg'
 import Layout from './components/Layout'
 import Statistics from './pages/Statistics'
 import LevelUpPage from './pages/LevelUpPage'
+import LoginPage from './pages/LoginPage'
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
         <Route path='/statistics' element={<Statistics/>} />
 
 
+
         </Route>
+        <Route path='/login' element={<LoginPage/>} />
       </Routes>
       <ParticlesBg/>
     </BrowserRouter>
