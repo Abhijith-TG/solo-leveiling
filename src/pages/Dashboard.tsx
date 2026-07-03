@@ -13,7 +13,7 @@ function Dashboard() {
 
 
   return (
-    <div className="p-5  w-full  shadow-white ">
+    <div className="p-5  w-full  shadow-white max-h-dvh">
 
     <div className=" flex flex-wrap w-full gap-5 items-start justify-between shadow-white ">
                 <div className="flex flex-col gap-5">
