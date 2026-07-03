@@ -28,10 +28,10 @@ function SideBar() {
 
 
   return (
-    <div className={`text-white absolute h-dvh z-100  flex flex-col gap-5  bg-purple-900/20 backdrop-blur-xl px-2 py-5 sm:relative ${expand ? "w-55 items-start": "w-18 items-center"} transition-all `}>
+    <div className={`text-white absolute h-full sm:h-dvh z-100  flex flex-col gap-5  bg-purple-900/20 backdrop-blur-xl px-2 py-5 sm:relative ${expand ? "w-55 items-start": "sm:w-18 w-15 items-center"} transition-all `}>
         <div className="flex items-center mb-10 gap-2 ">
-        <img src={logo} className="w-10 h-10 shrink-0 relative top-1" />
-        {expand && <h1 className="text-[28px] " >TazKora</h1>}
+        <img src={logo} className="sm:w-10 sm:h-10 w-8 h-8 shrink-0 relative top-1" />
+        {expand && <h1 className="sm:text-[28px] text-[18px] " >TazKora</h1>}
 
         </div>
         

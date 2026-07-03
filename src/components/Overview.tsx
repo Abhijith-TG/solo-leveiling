@@ -1,19 +1,30 @@
 import Counter from "./Counter"
 import DateFilter from "./DateFilter"
+import type { User } from "../types/user"
+import type { Activity } from "../types/tasks"
 
 
 function Overview() {
 
+    const user:User = JSON.parse(localStorage.getItem('user')|| '')
+
+    const activity:Activity[] = JSON.parse(localStorage.getItem('activity') || '')
+
+    const earnedXP = activity.reduce(
+    (acc, a) => acc + a.xp,
+    0
+    );
+
     const overview = [{
         name:"Level",
-        level:11,
+        level:user.level,
         icon:"💪",
         text:"vs previous month"
 
     },
 {
         name:"Experience",
-        level:2862,
+        level:earnedXP,
         icon:"⏳",
         text:"Xps"
 
@@ -21,7 +32,7 @@ function Overview() {
     },
     {
         name:"Streak",
-        level:11,
+        level:user.streak,
         icon:"🔥",
         text:"Days"
 
@@ -29,7 +40,7 @@ function Overview() {
     },
     {
         name:"Longest Streak",
-        level:16,
+        level:user.longestStreak,
         icon:"🏆",
         text:"Days"
 
