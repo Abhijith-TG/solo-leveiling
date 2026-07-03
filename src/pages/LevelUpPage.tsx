@@ -44,9 +44,9 @@ function LevelUpPage() {
   }, [tasks]);
 
   return (
-    <div className="p-5 flex flex-col  items-center justify-center shadow-white ">
+    <div className="p-5 flex flex-col lg:flex-row gap-4 items-center justify-center shadow-white ">
       <ExpCircle user={user}/>
-      <div className="sm:overflow-y-auto sm:h-65 ">
+      <div className="my-scrollbar h-dvh lg:h-80 ">
         <TaskList tasks={tasks} increaseXp={increaseXps}/>
       </div>
     </div>

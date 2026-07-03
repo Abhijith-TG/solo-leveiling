@@ -41,7 +41,7 @@ function Overview() {
 
   return (
     <div className="px-5 py-7 bg-purple-900/40 w-fit rounded-xl backdrop-blur-xl">
-        <div className="mb-10 flex justify-between">
+        <div className="mb-8 flex justify-between">
             <div className="flex flex-col gap-2">
                 <h1 className="text-white text-2xl">Overview</h1>
                 <p className="text-gray-300 text-xs">Details regrading your current status</p>

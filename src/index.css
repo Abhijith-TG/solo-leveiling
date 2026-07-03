@@ -1,2 +1,7 @@
-@import "tailwindcss"
+@import "tailwindcss";
 
+.my-scrollbar {
+  overflow: auto;
+  scrollbar-width: thin;                /* auto | thin | none */
+  scrollbar-color: #1A1D2E #0B0D17;     /* thumb color | track color */
+}
