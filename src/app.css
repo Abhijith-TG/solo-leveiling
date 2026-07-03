@@ -7,10 +7,10 @@
 }
 
 .task-list::-webkit-scrollbar-thumb {
-  background: #8b5cf6;
+  background: #743bf9;
   border-radius: 999px;
 }
 
 .task-list::-webkit-scrollbar-thumb:hover {
-  background: #a855f7;
+  background: #942df4;
 }
