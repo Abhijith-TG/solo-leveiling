@@ -1,6 +1,8 @@
 import Overview from "../components/Overview";
+import OverviewMain from "../components/Overview2";
 import SideContent from "../components/SideContent";
 import TopBar from "../components/TopBar";
+import type { Activity } from "../types/tasks";
 
 
 
@@ -9,7 +11,10 @@ import TopBar from "../components/TopBar";
 
 function Dashboard() {
 
- 
+  const activity: Activity[] = JSON.parse(
+    localStorage.getItem("activity") || "[]"
+);
+
 
 
   return (
@@ -19,6 +24,7 @@ function Dashboard() {
                 <div className="flex flex-col gap-5">
                 <TopBar/>
             <Overview/>
+            <OverviewMain activity={activity}/>
       </div>
                 <SideContent/>
     </div>

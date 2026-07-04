@@ -3,7 +3,7 @@ import type { User } from "../types/user";
 import Streaks from "./Streaks";
 
 
-type circleType ={
+export type circleType ={
   user:User
 }
 
