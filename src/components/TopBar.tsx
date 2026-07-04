@@ -5,7 +5,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 function TopBar() {
 
   return (
-    <div className=' flex ps-6 pe-2 py-2 text-white bg-purple-900/40 backdrop-blur-xl rounded-full justify-between max-w-200 min-w-80 sm:min-w-150 lg:min-w-220 items-center transition-all'>
+    <div className=' flex ps-6 pe-2 py-2 text-white bg-purple-900/40 backdrop-blur-xl rounded-full justify-between max-w-200 min-w-80 sm:min-w-150 lg:min-w-222 items-center transition-all'>
         <div className='text-xl'>Dashboard</div> 
         <div className='flex items-center gap-3'>
             <div className='  p-1.5  sm:p-2.5 bg-purple-900/60 rounded-full' > <BsQuestionCircle size={18}/> </div>
