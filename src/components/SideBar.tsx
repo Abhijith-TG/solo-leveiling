@@ -10,7 +10,7 @@ import { GiHunterEyes } from "react-icons/gi"
 function SideBar() {
 
     const navItems = [
-        {name:"Dashboard",route:"/", icon:<HiHome size={20}/>},
+        {name:"Dashboard",route:"/dashboard", icon:<HiHome size={20}/>},
         {name:"Level Up",route:"/level", icon:<GiHunterEyes size={20}/>},
         {name:"Acheivements",route:"/acheivments",icon:<AiFillCheckCircle size={20}/>},
         {name:"Statistics",route:"/statistics",icon:<FaChartSimple size={20}/>},

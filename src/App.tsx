@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import Acheivement from './pages/Acheivement'
 import ParticlesBg from './components/ParticlesBg'
@@ -12,8 +12,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout/>}>
+        <Route path='/' element={<Navigate to="/level" replace/>} />
 
-        <Route path='/' element={<Dashboard/>} />
+        <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/level' element={<LevelUpPage/>} />
         <Route path='/acheivments' element={<Acheivement/>} />
         <Route path='/statistics' element={<Statistics/>} />
