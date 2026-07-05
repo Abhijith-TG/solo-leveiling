@@ -4,31 +4,21 @@ import SideContent from "../components/SideContent";
 import TopBar from "../components/TopBar";
 import type { Activity } from "../types/tasks";
 
-
-
-
-
-
 function Dashboard() {
-
   const activity: Activity[] = JSON.parse(
-    localStorage.getItem("activity") || "[]"
-);
-
-
+    localStorage.getItem("activity") || "[]",
+  );
 
   return (
     <div className="p-5  w-full  shadow-white max-h-dvh">
-
-    <div className=" flex flex-wrap w-full gap-5 items-start justify-between shadow-white ">
-                <div className="flex flex-col gap-5">
-                <TopBar/>
-            <Overview/>
-            <OverviewMain activity={activity}/>
+      <div className=" flex flex-wrap w-full gap-5 items-start  shadow-white ">
+        <div className="flex flex-1 flex-col gap-5">
+          <TopBar />
+          <Overview />
+          <OverviewMain activity={activity} />
+        </div>
+        <SideContent />
       </div>
-                <SideContent/>
-    </div>
-      
     </div>
   );
 }

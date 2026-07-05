@@ -51,7 +51,7 @@ function Overview() {
 
 
   return (
-    <div className="px-5 py-7 bg-purple-900/40 w-fit rounded-xl backdrop-blur-xl">
+    <div className="px-5 py-7 bg-purple-900/40 rounded-xl backdrop-blur-xl w-full">
         <div className="mb-8 flex justify-between">
             <div className="flex flex-col gap-2">
                 <h1 className="text-white text-2xl">Overview</h1>
@@ -62,7 +62,7 @@ function Overview() {
             </div>
             
         </div>
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex gap-4 flex-wrap justify-center sm:justify-start ">
             {
                 overview.map((over,index)=>(
                     <div key={index} className="p-5 bg-purple-900/80 rounded-2xl text-white backdrop-blur-xl flex flex-col justify-start w-50 gap-3"> 
