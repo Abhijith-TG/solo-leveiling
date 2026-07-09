@@ -20,10 +20,10 @@ function OverviewMain({activity}:activityProps) {
         </div>
 
         <div className="mt-8 flex gap-12 flex-wrap">
-                <div className="w-full sm:min-w-100 h-50 bg-purple-900/40 rounded-xl">
+                <div className="w-full sm:w-100 h-50 bg-purple-900/40 rounded-xl">
                     <XpChart activity={activity}/>
                 </div>
-                <div className="w-full sm:min-w-100 h-50 bg-purple-900/40 rounded-xl">
+                <div className="w-full sm:w-100 h-50 bg-purple-900/40 rounded-xl">
                     <HeatMap activity={activity}/>
                 </div>
         </div>
