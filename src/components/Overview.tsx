@@ -51,7 +51,7 @@ function Overview() {
 
 
   return (
-    <div className="px-5 py-7 bg-purple-900/40 rounded-xl backdrop-blur-xl w-full">
+    <div className=" px-3 sm:px-5 py-7 bg-purple-900/40 rounded-xl backdrop-blur-xl w-full">
         <div className="mb-8 flex justify-between">
             <div className="flex flex-col gap-2">
                 <h1 className="text-white text-xl sm:text-2xl">Overview</h1>

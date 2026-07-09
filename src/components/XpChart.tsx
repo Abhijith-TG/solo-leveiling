@@ -5,13 +5,17 @@ export type activityProps = {
 };
 
 function XpChart({ activity }: activityProps) {
+
+
+
+
   return (
     <div className="h-full px-2">
-      {activity.length === 0 ? (
+      {activity.length === 0  ? (
         <div></div>
       ) : (
         <div className="flex items-end h-full gap-3">
-          {activity.map((a, i) => (
+          {activity.slice(-7).map((a, i) => (
             <div key={i} className="flex flex-col items-center">
               <div
                 className={`w-10  bg-green-400/80 rounded-t-lg`}
