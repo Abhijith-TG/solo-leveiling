@@ -1,7 +1,12 @@
+import { useNavigate } from "react-router-dom"
 import logo from "../assets/logo.png"
 
 
 function LoginPage() {
+
+    const navigate = useNavigate()
+
+
   return (
     <div className='text-white  flex  justify-center items-center min-h-screen'>
         <div className='bg-violet-900/20 px-20 pt-10 pb-20 flex flex-col items-center rounded-xl shadow-4xl'>
@@ -15,7 +20,7 @@ function LoginPage() {
             <input type="password" placeholder='Enter password' className='bg-white text-black px-2 py-1' />
         </div>
         <div className='mt-4 w-full  '>
-            <button className='bg-violet-900 px-2 rounded w-full py-1 hover:bg-violet-900/80 transition-all hover:cursor-pointer'>Login</button>
+            <button onClick={()=>navigate('/')} className='bg-violet-900 px-2 rounded w-full py-1 hover:bg-violet-900/80 transition-all hover:cursor-pointer'>Login</button>
         </div>
             <div className="w-full mt-4 text-gray-400">
                 <p className="text-start">Don't have an account ? <span className="text-violet-300">Sign Up</span></p>
