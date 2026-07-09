@@ -51,8 +51,8 @@ function Overview() {
 
 
   return (
-    <div className=" px-3 sm:px-5 py-7 bg-purple-900/40 rounded-xl backdrop-blur-xl w-full">
-        <div className="mb-8 flex justify-between">
+    <div className=" px-3 sm:px-5 py-3 sm:py-7 bg-purple-900/40 rounded-xl backdrop-blur-xl w-full">
+        <div className="mb-8 flex justify-between gap-4 flex-wrap">
             <div className="flex flex-col gap-2">
                 <h1 className="text-white text-xl sm:text-2xl">Overview</h1>
                 <p className="text-gray-300 text-xs">Details regrading your current status</p>
@@ -65,7 +65,7 @@ function Overview() {
         <div className="flex gap-4 flex-wrap justify-center sm:justify-start ">
             {
                 overview.map((over,index)=>(
-                    <div key={index} className="p-5 bg-purple-900/80 rounded-2xl text-white backdrop-blur-xl flex flex-col justify-start w-40  sm:w-50 gap-3"> 
+                    <div key={index} className="flex-1 text-white min-w-35 sm:min-w-50  p-5  bg-purple-900/80 rounded-2xl"> 
                         <div className="flex items-center justify-start gap-2">
                             <div>{over.icon}</div>
                             <p className=" text-sm sm:text-lg">{over.name}</p>

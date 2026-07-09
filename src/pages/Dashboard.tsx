@@ -10,7 +10,7 @@ function Dashboard() {
   );
 
   return (
-    <div className="p-5  w-full  shadow-white max-h-dvh">
+    <div className="p-5  w-full  shadow-white ">
       <div className=" flex flex-wrap w-full gap-5 items-start  shadow-white ">
         <div className="flex flex-1 flex-col gap-5">
           <TopBar />
