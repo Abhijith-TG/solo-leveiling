@@ -18,12 +18,12 @@ function XpChart({ activity }: activityProps) {
           {activity.slice(-7).map((a, i) => (
             <div key={i} className="flex flex-col items-center">
               <div
-                className={`sm:w-10 w-5 bg-green-400/80 rounded-t-lg`}
+                className={`sm:w-10 w-5   bg-green-400/80 rounded-t-lg`}
                 style={{
                   height: `${(a.xp / 315) * 180}px`,
                 }}
               ></div>
-              <p className="text-xs">{a.xp} xp</p>
+              <p className="text-[9px] sm:text-xs">{a.xp} xp</p>
             </div>
           ))}
         </div>
