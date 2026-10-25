@@ -55,4 +55,10 @@ export  const tasklist: Tasks[] = [
       completed: false,
       xp: 45,
     },
+    {
+      id: 10,
+      desc: "Do some coding anything...",
+      completed: false,
+      xp: 25,
+    },
   ];
