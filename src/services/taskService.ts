@@ -9,7 +9,7 @@ export  const tasklist: Tasks[] = [
     },
     {
       id: 2,
-      desc: "No more h-job toady",
+      desc: "No more h-job today",
       completed: false,
       xp: 75,
     },
@@ -41,12 +41,18 @@ export  const tasklist: Tasks[] = [
       id: 7,
       desc: "Reduce Social media time",
       completed: false,
-      xp: 15,
+      xp: 25,
     },
     {
       id: 8,
-      desc: "Sleep 7 hrs ",
+      desc: "Sleep atleast 7 hrs ",
       completed: false,
       xp: 25,
+    },
+    {
+      id: 9,
+      desc: "Practice typing for 15 min",
+      completed: false,
+      xp: 45,
     },
   ];
